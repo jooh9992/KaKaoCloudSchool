@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>복합 선택자</title>
+    </head>
+    <body>
+        <h1>안녕하세요 <em>아담입니다.</em></h1>
+        <p>한 번 tv에 나와서 노래를 하면 <em id="dev"> 천만원 적자입니다.</em></p>
+        <img src="https://cdnweb01.wikitree.co.kr/webdata/editor/202202/03/img_20220203152221_f00e3cfa.webp" width="250" height="300">
+        H<span>2</span>0  
+        <p id="shadow">텍스트 그림자</p>
+        <ol>
+            <li>XHTML</li>
+            <li>css</li>
+            <li>JavaScript</li>
+            <li>HTML5</li>
+            <li>Node</li>
+            <li>React</li>
+        </ol>
+    </body>
+    <style>
+        
+        ol{
+            list-style-type: katakana;
+        }
+        #shadow{
+            font-size: 200px;
+            color: #ba9eba;
+            text-shadow: -0.05em -0.05em 0.05em purple, 
+            0.03em 0.03em 0.05em white;
+
+        }
+        span{
+            vertical-align: sub;
+            font-size: 0.5em;
+        }
+        img{
+            vertical-align:  top;
+        }
+        #dev{
+            color: red;
+            background-color: rgb(56, 42, 12);
+        }
+        h1:hover{
+            color: orange;
+            font-size: 3em;
+            font-family: "돋움";
+        }
+    </style>
+</html>

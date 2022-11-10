@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--문서에 대한 정보-->
+        <meta charset="utf-8"/>
+        <title>자바스크립트로 출력하기</title>
+        <script>
+            var data = 10;
+            console.log("data :" + data);
+            //문자열과 데이터를 + 하면 데이터를 문자열로 변환해서 결합
+            data = 20; //기존 데이터가 참조하고 있는 데이터를 수정
+            {
+                //기존 데이터의 값을 변경하는 것이 아니고 새로운 영역의 
+                //data를 만드는 것입니다.
+                //여러 블럭에 동일한 이름이 여러 개 존재하면
+                //자신의 블럭에서 가까운 블럭에 만든 것을 우선합니다.
+                let data = 2022;
+                console.log("data :" + data);//가까운 곳에서 만든 2022
+            }
+            console.log("data :" + data);//이전 내부 블럭이 없다고 보면 20
+            //let 대신에 var를 사용하는 내부 블럭에서 외부 블럭은 데이터를 호출함
+            const con =10000;
+            //con = 111;
+
+            //배열 생성
+            var aespa = ['카리나', '윈터', '지젤', '닝닝'];
+            console.log(aespa.length);
+            console.log(aespa.toString());
+            console.log(aespa[0]);
+
+            var br = new Array(1235568);
+
+            //데이터 변환
+            //var input = prompt("숫자를 입력하세요.");
+            //console.log(typeof input);
+            //console.log(Number(input)+4);
+
+            //
+            var data = 20;
+            data++;
+            console.log(data);
+            console.log(data++);
+            console.log(++data);
+            console.log(++data+ ++data);
+
+            setInterval(function(){
+                for(var i =0; i<100; i++){
+                    if(i%3==0){
+                        document.write("빨강 <br/>");
+                    }
+                        
+                }
+            }, 1000);
+        
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

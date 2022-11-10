@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--문서에 대한 정보-->
+        <meta charset="utf-8"/>
+        <title>복합 선택자</title>
+        <style>
+            baseball{
+                display: table;
+                border-collapse: separate;
+            }
+            data{
+                display: table-row-group;
+            }
+            team, director{
+                display: table-cell;
+                border: 1px double;
+                padding: 10px;
+                border-spacing: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <baseball> 
+            <data> 
+                <team>삼성</team> 
+                <director>류중일</director>
+            </data> 
+            <data> 
+                <team>SK</team> 
+                <director>이만수</director> 
+            </data> 
+            <data>
+                <team>롯데</team> 
+                <director>양승호</director> 
+            </data> 
+            <data> 
+                <team>KIA</team>
+                <director>선동렬</director> 
+            </data> 
+        </baseball>
+    </body>
+</html>

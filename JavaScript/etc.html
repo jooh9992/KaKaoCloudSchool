@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" contents="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>기타 제어문</title>
+        <script>
+            for(var i =1; i<10; i++){
+                if(i %3==0){
+                    break;
+                    //반복문 중단
+                }
+                console.log(i);
+                
+            }
+
+            for(var i =1; i<10; i++){
+                if(i %3==0){
+                    continue;
+                    //continue 아래는 수행하지 않고 다음 반복으로 넘어감
+                }
+                console.log(i);
+                
+            }
+            //별 5개씩 5줄
+            /*for(var i =0; i<5; i++){
+                for(var j =0; j<5; j++){
+                    document.write("*");
+                }
+                document.write("<br/>");
+            }
+            for(var i =0; i<5; i++){
+                for(var j =0; j<i+1; j++){
+                    document.write("*");
+                }
+                document.write("<br/>");
+            }
+            for(var i =0; i<5; i++){
+                for(var j =i; j<5; j++){
+                    document.write("*");
+                }
+                document.write("<br/>");
+            }
+            for(var i =0; i<5; i++){
+                for(var j = 4; j>i; j--){
+                    document.write("&nbsp");
+                }
+                for(var j =0; j<i+1; j++){
+                    document.write("*");
+                }
+                document.write("<br/>");
+            }
+            for(var i =0; i<5; i++){
+                for(var j = 0; j<= i; j++){
+                    document.write("&nbsp");
+                }
+                for(var j =5; j>i; j--){
+                    document.write("*");
+                }
+                document.write("<br/>");
+            }
+            for(var i =0; i<5; i++){
+                for(var j = 4; j> i; j--){
+                    document.write("&nbsp");
+                }
+                for(var j =0; j<i+1; j++){
+                    document.write("*");
+                }
+
+                for(var j = 1; j<=i; j++){
+                    document.write("*");
+                }
+                document.write("<br/>");
+            }
+
+            for(var i =0; i<5; i++){
+                if(i<3){
+                    for(var j=0; j<i+1; j++){
+                        document.write("*");
+                    }
+                }else{
+                    for(var j=5; j>i; j--){
+                        document.write("*");
+                    }
+                }
+                document.write("<br/>");
+            }*/
+            var n =0;
+            for(var i =0; i<5; i++){
+                
+                for(var j = 0; j<4-i; j++){
+                    document.write("&nbsp");
+                }
+                for(var j = 0; j<2*i+1; j++){
+        
+                    if(j == 0 || j==2*i){
+                        document.write(n++);
+                    }
+                    else{
+                        document.write("&nbsp");
+                    }
+            
+                }
+                
+                document.write("<br/>");
+            }
+            for(var i =0; i<9; i++){
+                if(n > 9){
+                    n = 0;
+                }
+                    document.write(n++);
+                    
+                }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

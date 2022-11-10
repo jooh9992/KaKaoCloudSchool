@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" contents="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>메뉴를 랜덤하게 출력</title>
+        <script>
+            //랜덤한 숫자를 출력 - Math.random()
+            //범위는 0.0 ~ 1.0
+            //alert(Math.random());
+
+            //숫자를 정수로 만들기: 반올림, 버림, 올림
+            //0 ~ 4까지의 정수가 나오도록하기
+            let su = Math.random()*1000;
+            let menu = Math.round(su)%5;
+            //0 이면 한식 1 중식 2 일식 3 분식 4 양식
+            //if문이나 switch도 괜찮지만 값이 정해져있는건 배열을 사용하는게
+            //깔끔하게 사용 가능
+            let foods = ["한식", "중식", "일식", "분식", "양식"];
+            alert(foods[menu]);
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

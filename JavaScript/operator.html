@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" contents="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Operator</title>
+        <script>
+            console.log(~14); //1의 보수는 부호는 반대가 되고 절대값 1차이
+            console.log(27 & 14); //10
+            console.log(27| 14); //31
+            console.log(27 ^ 14); //21
+            console.log(14 << 2); //한 번 밀 때 마다 2배씩 증가
+            console.log(14>>2);
+            console.log(14 >>> 2);
+            console.log(-14 >> 2); //음수의 경우는 >>>과 결과가 다름
+            console.log( -14 >>>2);
+
+            var x = 10;
+            let result = x >  10 && x--; //왼쪽이 false
+            console.log(result);
+
+            //Boolean이 아니어도 && 연산을 할 수 있음
+            result = true && 10;
+            console.log(result);
+
+            let data1 = [1,2];
+            let data2 = [3,4];
+
+            result = data1 || data2;
+            //data1이 true이기때문에 data1이출력
+            //data2는 없다고 생각 만약에 data1이 false였다면 data2가 출력
+            console.log("결과" + result);
+            //문자열과 다른 데이터를 + 하면 다른 데이터를 문자열로 변환해서 결합
+
+            console.log("12"*3);
+
+            //삼항 연산자
+            var a1 = 20;
+            var a2 = 30;
+            let max = (a1>a2)? a1:a2;
+            console.log(max);
+
+            //Nullish operator
+            var data3 = 0;
+            var data4 = "JavaScript";
+
+            //0은 falsy 값이라서 data4가 리턴
+            let result1 = data3 || data4;
+            console.log(result1);
+            //data3는 null이 아니기 떄문에 data3 리턴
+            // ?? Falsy를 판단하는것이 아니고 데이터의 존재여부를 확인
+            let result2 = data3 ?? data4;
+            console.log(result2);
+
+            var str = "카리나";
+            console.log(typeof str); //자료형
+
+            var ar = ["카리나", "지젤", "윈터"];
+            console.log("닝닝" in ar); //존재 여부 확인
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
