@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" contents="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>빈 삼각형 만들기</title>
+        <script>
+            var n =0;
+            for(var i =0; i<5; i++){
+                
+                for(var j = 0; j<4-i; j++){
+                    document.write("&nbsp");
+                }
+                for(var j = 0; j<2*i+1; j++){
+        
+                    if(j == 0 || j==2*i){
+                        document.write(n++);
+                    }
+                    else{
+                        document.write("&nbsp");
+                    }
+            
+                }
+                
+                document.write("<br/>");
+            }
+            for(var i =0; i<9; i++){
+                if(n > 9){
+                    n = 0;
+                }
+                    document.write(n++);
+                    
+                }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
