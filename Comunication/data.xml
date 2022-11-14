@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<Root>
+    <Person>
+        <name>카리나</name>
+        <company>SM</company>
+    </Person>
+    <Person>
+        <name>장원영</name>
+        <company>Starship</company>
+    </Person>
+</Root>
