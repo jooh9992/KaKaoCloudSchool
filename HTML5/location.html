@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation</title>
+    <!--<script>
+        navigator.geolocation.watchPosition((postion)=>{
+            //위도와 경도 출력
+            alert(postion.coords.latitude + ":" + postion.coords.longitude);
+        }, (error)=>{
+            alert(error.code);
+        },{
+            maximumAge:5000,
+            enableHighAccuracy : true
+        });
+    </script>-->
+</head>
+<body>
+    <div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2245bb6ef61f369641bd1b9ed7fab963"></script>
+	<script>
+		navigator.geolocation.getCurrentPosition((position)=>{
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                level: 3
+            };
+
+            var map = new kakao.maps.Map(container, options);
+            var markerPosition  = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude); 
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);  
+        }, (error) =>{
+
+        },{
+
+        })
+	</script>
+</body>
+</html>
