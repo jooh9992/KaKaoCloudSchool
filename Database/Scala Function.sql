@@ -1,0 +1,160 @@
+SELECT *
+FROM EMP
+WHERE MOD(EMPNO, 2) = 1;
+
+-- EMP 테이블에서 1982년에 HIREDATE(입사일) 입사한 사원의 ENAME 과 SAL을 조회
+SELECT ENAME, SAL
+FROM EMP
+WHERE HIREDATE BETWEEN '1982-01-01' AND '1983-01-01';
+
+SELECT ENAME, SAL
+FROM EMP
+WHERE SUBSTRING(HIREDATE, 1, 4) = '1982';
+
+SELECT 10 + 20;
+
+SELECT 10 + NULL; #데이터베이스에서는 NULL 과 연산하면 NULL
+
+SELECT 10 + IFNULL(NULL, 20); #첫번째 데이터가 NULL이면 두번째 데이터 출력
+
+#tStaff의 데이터 개수
+SELECT COUNT(*) #모든 컬럼읙 값이 NULL이 아닌 경우의 데이터 개수
+FROM tStaff;
+
+SELECT COUNT(score) #score 컬럼에서 NULL을 제외한 개수
+FROM tStaff;
+
+#tStaff 테이블엥서 score의 평균 구하기
+#18개의 데이터 평균
+SELECT ROUND(AVG(score))
+FROM tStaff;
+
+#COUNT에 *을 사용했기 떄문에 20개의 데이터의 평균
+#데이터가 NULL인 경우는 0으로 간주
+SELECT ROUND(SUM(score)/COUNT(*),0)
+FROM tStaff;
+
+SELECT DEPTNO, JOB, ENAME
+FROM EMP
+GROUP BY DEPTNO;
+
+SELECT depart, AVG(salary)
+FROM tStaff
+GROUP BY depart
+HAVING AVG(salary) > 340;
+
+SELECT depart, AVG(salary)
+FROM tStaff
+GROUP BY depart
+HAVING depart IN('인사과','영업부');
+#인사과 영업부 총무부를 모두 드룹화 한 후 인사과와 영업부를 추출
+
+SELECT depart, AVG(salary)
+FROM tStaff
+WHERE depart IN('인사과','영업부')
+GROUP BY depart;
+#인사과와 영업부 데이터를 추출한 후 그룹화를 수행
+#데이터를 필터링 할 때는 할 수 있으면 빨리 하는 것이 좋음
+#그룹 함수를 이용한 조건이 아니라면 HAVING에 작성하지 말고 WHERE에 작성해야 함
+
+SELECT JSON_OBJECT('NAME',ENAME,'ASLARY', SAL)
+FROM EMP;
+
+SELECT DEPTNO
+FROM EMP
+UNION
+SELECT DEPTNO 
+FROM EMP;
+
+SELECT DEPTNO
+FROM EMP
+UNION ALL
+SELECT DEPTNO 
+FROM EMP;
+
+SELECT DEPTNO
+FROM EMP
+INTERSECT
+SELECT DEPTNO 
+FROM EMP;
+
+SELECT DEPTNO
+FROM DEPT6
+EXCEPT
+SELECT DEPTNO 
+FROM EMP;
+
+SELECT DEPTNO
+FROM EMP
+WHERE ENAME = 'MILLER';
+
+SELECT ENAME
+FROM EMP
+WHERE DEPTNO = 10;
+
+SELECT name , max(popu)
+FROM tCity;
+-- 결과값이 이상함
+
+SELECT name , popu
+FROM tCity
+WHERE popu = (SELECT max(popu) from tCity);
+
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > (SELECT AVG(SAL) FROM EMP);
+
+SELECT *
+FROM tStaff
+WHERE (depart, gender) = 
+		(SELECT depart, gender 
+		FROM tStaff 
+		WHERE name = '안중근');
+	
+SELECT MAX(SAL)
+FROM EMP 
+Group by DEPTNO;
+
+-- 에러, = 서브 쿼리의 결과는 3개인데 = 로 비교해서 에러
+-- IN으로 바꿔주면 됨 or NOT IN
+SELECT ENAME , SAL
+FROM EMP 
+WHERE SAL = (SELECT MAX(SAL) FROM EMP GROUP BY DEPTNO);
+
+SELECT *
+FROM EMP, DEPT;
+
+SELECT *
+FROM EMP, DEPT
+WHERE EMP.DEPTNO = DEPT.DEPTNO;
+
+SELECT DNAME, ENAME
+FROM DEPT, EMP
+WHERE DEPT.DEPTNO = EMP.DEPTNO AND ENAME = 'MILLER'; #JOin 조건을 먼저
+
+SELECT ENAME, GRADE
+FROM EMP, SALGRADE
+WHERE SAL BETWEEN LOSAL AND HISAL;
+
+SELECT e1.ENAME "사원 이름", e2.ENAME "관리자 이름" 
+FROM EMP e1, EMP e2 #e1 이 자신의 정보 e2가 관리자의 정보
+WHERE e1.MGR  = e2.EMPNO ;
+
+SELECT *
+FROM EMP, DEPT
+WHERE EMP.DEPTNO = DEPT.DEPTNO;
+
+SELECT *
+FROM EMP INNER JOIN DEPT
+ON EMP.DEPTNO = DEPT.DEPTNO;
+
+SELECT *
+FROM EMP INNER JOIN DEPT
+USING(DEPTNO); 
+
+SELECT *
+FROM EMP NATURAL JOIN DEPT;
+
+SELECT *
+FROM EMP LEFT OUTER JOIN DEPT 
+ON EMP.DEPTNO = DEPT.DEPTNO;
