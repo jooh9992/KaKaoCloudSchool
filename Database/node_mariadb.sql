@@ -60,3 +60,6 @@ commit;
 SELECT * from goods;
 
 SELECT * from sessions;
+
+SELECT * from goods;
+
