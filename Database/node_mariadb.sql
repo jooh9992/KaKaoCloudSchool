@@ -63,3 +63,6 @@ SELECT * from sessions;
 
 SELECT * from goods;
 
+drop table goods;
+
+select * from goods;
