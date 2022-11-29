@@ -66,3 +66,9 @@ SELECT * from goods;
 drop table goods;
 
 select * from goods;
+
+desc Users;
+
+desc comments;
+
+SELECT * from Users;
