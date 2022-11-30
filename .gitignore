@@ -9,3 +9,5 @@ NodemariaDB/mariadb/public/img
 aespa
 Database/mongo/img/aespa01669711470078.jpg
 Node/mariadb/public/img
+Node/authentication/.env
+Node/mariadb/.env
