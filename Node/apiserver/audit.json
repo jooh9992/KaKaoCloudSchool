@@ -1,0 +1,16 @@
+{
+    "keepSettings": {
+        "type": 2,
+        "amount": 10
+    },
+    "auditFilename": "audit.json",
+    "hashType": "md5",
+    "extension": "",
+    "files": [
+        {
+            "date": 1669874010257,
+            "name": "C:\\Users\\user\\Documents\\KaKaoCloudSchool\\Node\\apiserver\\log\\access-20221201.log",
+            "hash": "b41caa58a5ae897cd82e77f588461ae4"
+        }
+    ]
+}
