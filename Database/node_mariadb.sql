@@ -61,6 +61,7 @@ SELECT * from goods;
 
 SELECT * from sessions;
 
+
 SELECT * from goods;
 
 drop table goods;
@@ -72,3 +73,10 @@ desc Users;
 desc comments;
 
 SELECT * from Users;
+
+desc snsuser;
+desc posts;
+desc hashtags;
+desc PostHashtag;
+
+SELECT * from snsuser;
