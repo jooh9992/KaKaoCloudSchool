@@ -80,3 +80,12 @@ desc hashtags;
 desc PostHashtag;
 
 SELECT * from snsuser;
+
+DELETE from snsuser; 
+
+select * from posts;
+select * from hashtags;
+select * from PostHashtag;
+select * from domains;
+
+drop table domains;
