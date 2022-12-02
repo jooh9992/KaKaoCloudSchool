@@ -2,7 +2,8 @@ const express = require('express');
 const axios = require('axios');
 
 //매번 동일한 요청을 위한 URL을 상수로 설정
-const URL = 'http://localhost:8000/v1';
+//const URL = 'http://localhost:8000/v1';
+const URL = 'http://localhost:8000/v2';
 //ajax 요펑을 할 때 누가 요청했는지 확인해주기 위해서
 //origin header 추가
 axios.defaults.headers.origin = 'http://localhost:4000';
@@ -70,4 +71,7 @@ router.get('/test', async(req, res, next)=>{
     }
 })
 
+router.get('/', (req, res)=>{
+    res.render('main', {key:process.env.CLIENT_SECRET})
+})
 module.exports = router;
