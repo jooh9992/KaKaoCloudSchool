@@ -1,10 +1,26 @@
 const express = require('express');
 const {verifyToken} = require('./middlewares');
-
-
+const jwt = require('jsonwebtoken');
+const {Domain, User, Post, Hashtag} = require('../models');
 
 const router = express.Router();
+//데이터를 리턴하는 요청 처리
+router.get('/posts/my', verifyToken, (req, res)=>{
+    Post.findAll({where:{userId:req.decoded.id}})
+    .then((posts)=>{
+        console.log(posts);
+        res.json({code:200, payload:posts})
+    })
+    .catch((error)=>{
+        console.error(error);
+        return res.status(500).json({
+            code:500,
+            message:'서버 에러'
+        })
+    })
+})
 
+//토큰 발급
 router.post('/token', async(req, res)=>{
     const {clientSecret} = req.body;
     try{
