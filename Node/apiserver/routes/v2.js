@@ -1,17 +1,11 @@
 const express = require('express');
-const {verifyToken, deprecated} = require('./middlewares');
+const {verifyToken, apiLimiter} = require('./middlewares');
 const jwt = require('jsonwebtoken');
 const {Domain, User, Post, Hashtag} = require('../models');
 
 const router = express.Router();
-
-//모든 라우팅 처리에서 deprecated 적용
-router.use(deprecated);
-//없으면 유효하지 않은 토큰입니다. 호출
-//이걸 적으면 새로운 버전이 나왔다고 새로운 버전을 사용하라고 출력해줌
-
 //데이터를 리턴하는 요청 처리
-router.get('/posts/my', verifyToken, (req, res)=>{
+router.get('/posts/my', apiLimiter ,verifyToken, (req, res)=>{
     Post.findAll({where:{userId:req.decoded.id}})
     .then((posts)=>{
         console.log(posts);
@@ -27,7 +21,7 @@ router.get('/posts/my', verifyToken, (req, res)=>{
 })
 
 //토큰 발급
-router.post('/token', async(req, res)=>{
+router.post('/token', apiLimiter , async(req, res)=>{
     const {clientSecret} = req.body;
     try{
         //도메인 찾아오기
@@ -49,7 +43,7 @@ router.post('/token', async(req, res)=>{
             id:domain.User.id,
             nick:domain.User.nick
         }, process.env.JWT_SECRET, {
-            expiresIn: '1m', //유효시간
+            expiresIn: '10m', //유효시간
             issuer: 'adam' //발급자
         });
 
@@ -69,7 +63,7 @@ router.post('/token', async(req, res)=>{
 })
 
 //토큰을 확인하기 위한 처리
-router.get('/test', verifyToken, (req, res)=>{
+router.get('/test',apiLimiter ,verifyToken, (req, res)=>{
     res.json(req.decoded);
 })
 
