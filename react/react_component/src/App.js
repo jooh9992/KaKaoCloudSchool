@@ -1,9 +1,15 @@
-import React, {Component} from 'react';
 import MyComponent from './MyComponent';
-class App extends Component{
-  render(){
-    return (<div><MyComponent /><MyComponent /></div>)
-  }
+import StateComponent from './StateComponent';
+import EventPractice from './EventPractice';
+
+function App() {
+  return (
+    <>
+      <MyComponent name={3}>태그 안의 내용</MyComponent>
+      <StateComponent/>
+      <EventPractice/>
+    </>
+  );
 }
 
 export default App;
