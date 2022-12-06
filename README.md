@@ -3,3 +3,5 @@
 ### 2주차 - JAVASCRIPT
 ### 3주차 - JAVASCRIPT, HTML5, NODE
 ### 4주차 - DATABASE
+### 5주차 - DATABASE, NODE
+### 6주차 - React
