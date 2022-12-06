@@ -26,7 +26,7 @@ class Iteration extends Component{
     //index를 매개변수로 받아서 삭제
     handleRemove = (index) =>{
 
-        
+
 
         const {names} = this.state;
         //const names = this.state.name; 위와 같음
@@ -51,6 +51,7 @@ class Iteration extends Component{
         <button onClick={(e)=>this.handleRemove(index)}>삭제</button></li>);
 
         return (<div>
+            {/* {this.state.missing.value} */}
             <input onChange={this.handleChange} value={this.state.name}/>
             <button onClick={this.handleInsert}>추가</button>
             <ul>{nameList}</ul>
