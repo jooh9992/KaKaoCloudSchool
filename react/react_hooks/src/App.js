@@ -145,6 +145,7 @@ import React from "react";
 import { useRef, useState, useMemo} from "react";
 import CreateUser from "./CreateUser";
 import UserList from "./UserList";
+import Average from "./Average";
 
 //active 가 true 인 데이터의 개수를 세는 함수
 const countActiveUser = (users) => {
@@ -221,6 +222,8 @@ const App = () =>{
 
   return (
     <div>
+      <Average/>
+      <br/>
       <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
       <UserList users={users} onRemove={onRemove} onToggle={onToggle}/>
       <div>활성화된 유저 수: {count}</div>
