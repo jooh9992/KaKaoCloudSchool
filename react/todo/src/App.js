@@ -43,7 +43,7 @@ function App() {
 
   //리듀서 설정 - 첫번째 매개변수는 호출될 함수
   //두번째는 초기값, 세번째는 호출할 메서드로 리턴하는 값이 초기값으로 설정됨
-  //리턴될 결과는 state와 
+  //리턴될 결과는 state 이름과 state를 수정할 함수
   const[todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
 
   //아이디를 위한 변수 생성
