@@ -1,4 +1,4 @@
-package kakako.cloud.exceptionhandling;
+package kakao.cloud.exceptionhandling;
 
 public class ExceptionHandling1 {
 	//이 메서드를 다른 곳에서 호출할 떄는 ArithmeticException을 핸들링해야함

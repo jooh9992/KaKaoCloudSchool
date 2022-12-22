@@ -1,4 +1,4 @@
-package kakako.cloud.exceptionhandling;
+package kakao.cloud.exceptionhandling;
 
 import java.util.Arrays;
 
