@@ -1,4 +1,4 @@
-package kakao.cloud.network;
+package kakao.cloud.stream;
 
 import java.util.Arrays;
 import java.util.List;
