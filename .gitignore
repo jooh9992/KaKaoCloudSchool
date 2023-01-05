@@ -13,3 +13,5 @@ Node/authentication/.env
 Node/mariadb/.env
 audit.json
 .env
+Spring/springmvc/target/school-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml
+Spring/springmvc/target/school-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/
