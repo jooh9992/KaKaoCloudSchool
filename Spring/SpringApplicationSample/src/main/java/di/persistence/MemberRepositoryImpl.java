@@ -1,7 +1,11 @@
 package di.persistence;
 
+import org.springframework.stereotype.Repository;
+
 import di.entity.MemberEntity;
 
+//bean을 자동 생성해주는 어노테이션
+@Repository
 public class MemberRepositoryImpl implements MemberRepository {
 
    @Override

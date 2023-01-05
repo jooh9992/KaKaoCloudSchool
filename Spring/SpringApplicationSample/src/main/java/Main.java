@@ -2,7 +2,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import domain.Item;
+import di.domain.Item;
 import persistence.ItemRepository;
 import persistence.RepositoryFactory;
 

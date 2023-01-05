@@ -1,6 +1,6 @@
 package persistence;
 
-import domain.Item;
+import di.domain.Item;
 
 public class ItemRepository {
 	//다른 패키지에서는 인스턴스 생성을 못하도록 생성자의 
