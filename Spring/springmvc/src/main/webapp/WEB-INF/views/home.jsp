@@ -19,7 +19,7 @@
 	
 	<!-- action은 생략하면 현재 요청 method는 기본이 get
 	enctype은 file이 있는 경우 multipart/form-data로 설정 그 이외는 생략
-	id는 스크립트에서 사용하기 위해서 사용 --> -->
+	id는 스크립트에서 사용하기 위해서 사용 -->
 	<!-- <form action="param1">
 		이름:<input type="text" name="name"/><br/>
 		비밀번호:<input type="password" name="password"/><br/>
@@ -34,8 +34,16 @@
 		이름:<input type="text" name="name"/><br/>
 		비밀번호:<input type="password" name="password"/><br/>
 		<input type="submit" value="전송"/>
-	</form>
-	-->
+	</form>-->
+	
+	<a href="item.xls">엑셀 다운로드</a><br/>
+	<a href="item.pdf">PDF 다운로드</a><br/>
+	<a href="itemlist.json">json 다운로드</a><br/>
+	<a href="item.csv">텍스트 출력</a><br/>
+	<a href="itemlistrest.json">json 다운로드</a><br/>
+	<a href="exception">예외 발생</a><br/>
+	<a href="message">메시지 출력</a><br/>
+	
 	<div align="center" class="body">
 		<h2>상품 목록</h2>
 		<table border="1">
@@ -47,7 +55,8 @@
 			<c:forEach var ="item" items="${list}">
 				<tr class ="record">
 					<td align ="center" width="80">${item.itemid}</td>
-					<td align ="left" width="320">${item.itemname}</td>
+					<td align="left" width="320">
+					<a href="detail/${item.itemid}">${item.itemname}</a></td>
 					<td align ="right" width="100">${item.price}원</td>
 				</tr>
 			</c:forEach>
