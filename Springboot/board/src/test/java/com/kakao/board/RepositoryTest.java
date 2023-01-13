@@ -120,4 +120,30 @@ public class RepositoryTest {
             System.out.println(c);
         });
     }
+    @Test
+    public void testSearch1(){
+        boardRepository.search1();
+    }
+
+    //검색 테스트
+    @Test
+    public void testSearch(){
+        Pageable pageable = PageRequest.of(0, 10,
+                Sort.by("bno").descending()
+                        .and(Sort.by("title").ascending()));
+        Page<Object[]> result = boardRepository.searchPage("c", "안녕",
+                pageable);
+
+        for(Object [] row : result.getContent()){
+            System.out.println(Arrays.toString(row));
+        }
+    }
+    @Test
+    public void testListReply(){
+        List<Reply> replyList = replyRepository.findByBoardOrderByRno(
+                Board.builder().bno(22L).build()
+        );
+        replyList.forEach(reply -> System.out.println(reply));
+    }
+
 }
