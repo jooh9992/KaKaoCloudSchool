@@ -16,9 +16,10 @@ public interface ReplyService {
     //댓글 삭제
     Long remove(Long rno);
     //ReplyDTO를 Reply Entity로 변환해주는 메서드
-    default Reply dtoEntity(ReplyDTO dto){
+    default Reply dtoToEntity(ReplyDTO dto){
         Board board = Board.builder().bno(dto.getBno()).build();
         Reply reply = Reply.builder()
+                .rno(dto.getRno())
                 .text(dto.getText())
                 .replyer(dto.getReplyer())
                 .board(board)
