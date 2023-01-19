@@ -14,7 +14,7 @@ import lombok.*;
 @Embeddable //부모 테이블을 만들 때 이 속성의 값을 포함시켜 생성
 public class MovieImage{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long inum;
     private String uuid; //파일이 이름이 겹치지 않도록 하기 위해서 추가
     private String imgName; //파일이름

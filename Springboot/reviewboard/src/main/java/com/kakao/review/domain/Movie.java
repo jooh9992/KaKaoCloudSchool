@@ -14,7 +14,7 @@ import lombok.*;
 @ToString
 public class Movie extends BaseEntity{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long mno;
 
     private String title;
