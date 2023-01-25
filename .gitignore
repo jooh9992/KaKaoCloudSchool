@@ -16,3 +16,4 @@ audit.json
 Spring/springmvc/target/school-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml
 Spring/springmvc/target/school-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/
 data
+Springboot/security/src/main/resources/application.yml
